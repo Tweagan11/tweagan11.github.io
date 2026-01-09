@@ -18,9 +18,9 @@ function Resume() {
       <div className="space-y-12">
         {/* Contact Info */}
         <div className="flex flex-wrap gap-6 text-stone-600 dark:text-stone-300 text-sm">
-          <span>📧 teagan.ms.ut@gmail.com</span>
-          <span>📱 (801) 369-4523</span>
-          <span>📍 Midvale, UT</span>
+          <span>Email: teagan.ms.ut@gmail.com</span>
+          <span>Phone: (801) 369-4523</span>
+          <span>Location: Midvale, UT</span>
         </div>
 
         {/* Education */}
