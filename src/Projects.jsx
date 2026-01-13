@@ -21,7 +21,6 @@ const projects = [
     }
 ];
 
-<<<<<<< HEAD
 const languages = new Map([
     ['python', {
         icon: "/assests/python_logo.png",
