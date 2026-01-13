@@ -61,21 +61,20 @@ const MountainPhoto = ({ darkMode }) => (
     <img 
       src={timp_peak}
       alt="Timpanogos Peak"
-      className="w-full h-full object-cover opacity-90"
+      className="w-full h-full object-cover opacity-100"
       style={{ 
         objectPosition: 'center center',
         maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%)'
+        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
       }}
     />
     {/* Gradient overlay to fade the image edges */}
 
     {darkMode ? (<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/0"></div>)
-    : (<div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/0"></div>)}
+    : (<div className="absolute inset-0 bg-gradient-to-b from-white/0 via-transparent to-white/80"></div>)}
   </div>
 );
 
-// Topographic line decoration
 const TopoLines = () => (
   <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
     {[...Array(8)].map((_, i) => (
@@ -112,31 +111,31 @@ function Home({ darkMode }) {
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center relative">
       <MountainPhoto darkMode={darkMode} />
-      <div className="text-center z-10 px-4">
-        <h1 className="text-6xl md:text-7xl font-light text-stone-800 dark:text-stone-100 mb-4 tracking-tight">
+      <div className="text-center z-10 px-4 py-12 rounded-2xl backdrop-blur-sm bg-white/10 dark:bg-black/15 border border-white/20 dark:border-white/10 shadow-xl">
+        <h1 className="text-6xl md:text-7xl font-light text-stone-800 dark:text-stone-50 mb-4 tracking-tight">
           Teagan Smith
         </h1>
         <div className="w-24 h-0.5 bg-emerald-700 dark:bg-emerald-500 mx-auto mb-6"></div>
-        <p className="text-xl md:text-2xl text-stone-600 dark:text-stone-300 font-light mb-8">
+        <p className="text-xl md:text-2xl text-stone-700 dark:text-stone-100 font-light mb-8">
           Computer Science Student & Outdoorsman
         </p>
-        <p className="text-lg text-stone-500 dark:text-stone-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-lg text-stone-700 dark:text-stone-200 max-w-2xl mx-auto mb-8 leading-relaxed">
           Building intelligent systems and exploring the wilderness. 
           Currently at the University of Utah, where the mountains meet machine learning.
         </p>
-        <div className="flex gap-6 justify-center items-center text-stone-600 dark:text-stone-400">
+        <div className="flex gap-6 justify-center items-center text-stone-700 dark:text-stone-300">
           <a href="https://github.com/Tweagan11" target="_blank" rel="noopener noreferrer" 
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors duration-300 text-sm uppercase tracking-wider">
+             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
             GitHub
           </a>
-          <span className="text-stone-300 dark:text-stone-600">•</span>
+          <span className="text-stone-400 dark:text-stone-500">•</span>
           <a href="https://linkedin.com/in/Teagan-Smith-a0b259246" target="_blank" rel="noopener noreferrer"
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors duration-300 text-sm uppercase tracking-wider">
+             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
             LinkedIn
           </a>
-          <span className="text-stone-300 dark:text-stone-600">•</span>
+          <span className="text-stone-400 dark:text-stone-500">•</span>
           <a href="mailto:teagan.ms.ut@gmail.com"
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors duration-300 text-sm uppercase tracking-wider">
+             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
             Contact
           </a>
         </div>
@@ -215,12 +214,12 @@ function Footer() {
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [darkMode, setDarkMode] = useState(() => {
-    // Check for saved preference or system preference
+    // Check for saved preference or default to dark mode
     const saved = localStorage.getItem('darkMode');
     if (saved !== null) {
       return saved === 'true';
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return true; // Default to dark mode
   });
 
   // Apply dark mode class to document

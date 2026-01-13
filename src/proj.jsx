@@ -10,7 +10,7 @@ function Projects() {
     },
     {
       title: "HackUSU Winner: Drunken Sailors",
-      description: "🏆 1st Place out of 40+ teams. Developed and delivered a complete game prototype within 18 hours, learning new tools and technologies under pressure.",
+      description: "1st Place out of 40+ teams. Developed and delivered a complete game prototype within 18 hours, learning new tools and technologies under pressure.",
       tech: ["Game Dev", "Rapid Prototyping", "Team Collaboration"],
       link: "https://github.com/Tweagan11/HackUSU2025-Drunken-Sailors",
       date: "February 2025",
