@@ -111,31 +111,31 @@ function Home({ darkMode }) {
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center relative">
       <MountainPhoto darkMode={darkMode} />
-      <div className="text-center z-10 px-4 py-12 rounded-2xl backdrop-blur-sm bg-white/10 dark:bg-black/15 border border-white/20 dark:border-white/10 shadow-xl">
-        <h1 className="text-6xl md:text-7xl font-light text-stone-800 dark:text-stone-50 mb-4 tracking-tight">
+      <div className="text-center z-10 px-4 py-8 md:py-12 rounded-2xl backdrop-blur-sm bg-stone-100/80 dark:bg-black/15 border border-stone-300 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-stone-900 dark:text-stone-50 mb-4 tracking-tight">
           Teagan Smith
         </h1>
-        <div className="w-24 h-0.5 bg-emerald-700 dark:bg-emerald-500 mx-auto mb-6"></div>
-        <p className="text-xl md:text-2xl text-stone-700 dark:text-stone-100 font-light mb-8">
+        <div className="w-24 h-0.5 bg-emerald-600 dark:bg-emerald-400 mx-auto mb-6"></div>
+        <p className="text-lg md:text-xl lg:text-2xl text-stone-800 dark:text-stone-100 font-light mb-6 md:mb-8">
           Computer Science Student & Outdoorsman
         </p>
-        <p className="text-lg text-stone-700 dark:text-stone-200 max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-base md:text-lg text-stone-700 dark:text-stone-200 max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed">
           Building intelligent systems and exploring the wilderness. 
           Currently at the University of Utah, where the mountains meet machine learning.
         </p>
-        <div className="flex gap-6 justify-center items-center text-stone-700 dark:text-stone-300">
+        <div className="flex flex-wrap gap-4 md:gap-6 justify-center items-center text-stone-700 dark:text-stone-300 text-sm">
           <a href="https://github.com/Tweagan11" target="_blank" rel="noopener noreferrer" 
-             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 uppercase tracking-wider font-medium">
             GitHub
           </a>
-          <span className="text-stone-400 dark:text-stone-500">•</span>
+          <span className="text-stone-500 dark:text-stone-500">•</span>
           <a href="https://linkedin.com/in/Teagan-Smith-a0b259246" target="_blank" rel="noopener noreferrer"
-             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 uppercase tracking-wider font-medium">
             LinkedIn
           </a>
-          <span className="text-stone-400 dark:text-stone-500">•</span>
+          <span className="text-stone-500 dark:text-stone-500">•</span>
           <a href="mailto:teagan.ms.ut@gmail.com"
-             className="hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 uppercase tracking-wider font-medium">
             Contact
           </a>
         </div>
@@ -145,6 +145,8 @@ function Home({ darkMode }) {
 }
 
 function NavBar({ currentPage, setCurrentPage, darkMode, setDarkMode }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -152,24 +154,31 @@ function NavBar({ currentPage, setCurrentPage, darkMode, setDarkMode }) {
     { id: 'resume', label: 'Resume' }
   ];
   
+  const handleNavClick = (itemId) => {
+    setCurrentPage(itemId);
+    setMobileMenuOpen(false);
+  };
+  
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-stone-900/90 backdrop-blur-sm border-b border-stone-200 dark:border-stone-700">
-      <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-stone-100/95 dark:bg-stone-900/95 backdrop-blur-sm border-b border-stone-300 dark:border-stone-700">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <button 
-          onClick={() => setCurrentPage('home')}
-          className="text-2xl font-light text-stone-800 dark:text-stone-100 tracking-tight hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+          onClick={() => handleNavClick('home')}
+          className="text-2xl font-light text-stone-800 dark:text-stone-100 tracking-tight hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
         >
           TS
         </button>
-        <div className="flex gap-8 items-center">
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-8 items-center">
           {navItems.map(item => (
             <button
               key={item.id}
-              onClick={() => setCurrentPage(item.id)}
+              onClick={() => handleNavClick(item.id)}
               className={`text-sm uppercase tracking-wider transition-colors ${
                 currentPage === item.id 
-                  ? 'text-emerald-700 dark:text-emerald-400' 
-                  : 'text-stone-600 dark:text-stone-300 hover:text-emerald-700 dark:hover:text-emerald-400'
+                  ? 'text-emerald-600 dark:text-emerald-400' 
+                  : 'text-stone-600 dark:text-stone-300 hover:text-emerald-600 dark:hover:text-emerald-400'
               }`}
             >
               {item.label}
@@ -177,32 +186,71 @@ function NavBar({ currentPage, setCurrentPage, darkMode, setDarkMode }) {
           ))}
           <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-4">
+          <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-stone-600 dark:text-stone-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-stone-100 dark:bg-stone-800 border-t border-stone-200 dark:border-stone-700">
+          <div className="px-4 py-4 space-y-4">
+            {navItems.map(item => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`block w-full text-left text-sm uppercase tracking-wider py-2 px-2 rounded transition-colors ${
+                  currentPage === item.id 
+                    ? 'text-emerald-600 dark:text-emerald-400 bg-stone-200 dark:bg-stone-700' 
+                    : 'text-stone-600 dark:text-stone-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
 
 function Footer() {
   return (
-    <footer className="relative border-t border-stone-200 dark:border-stone-700 mt-20 py-12 bg-stone-50 dark:bg-stone-900">
+    <footer className="relative border-t border-stone-300 dark:border-stone-700 mt-20 py-12 bg-stone-100 dark:bg-stone-900">
       <TopoLines />
       <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
         <p className="text-stone-500 dark:text-stone-400 text-sm mb-4">
           Built with React • Inspired by the Wasatch Mountains
         </p>
-        <div className="flex gap-6 justify-center items-center text-stone-500 dark:text-stone-400 text-sm">
+        <div className="flex flex-wrap gap-4 justify-center items-center text-stone-500 dark:text-stone-400 text-sm">
           <a href="https://github.com/Tweagan11" target="_blank" rel="noopener noreferrer" 
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             GitHub
           </a>
           <span>•</span>
           <a href="https://linkedin.com/in/Teagan-Smith-a0b259246" target="_blank" rel="noopener noreferrer"
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             LinkedIn
           </a>
           <span>•</span>
           <a href="mailto:teagan.ms.ut@gmail.com"
-             className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+             className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             Email
           </a>
         </div>
@@ -243,7 +291,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-sans transition-colors duration-300">
       <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="relative">
         {renderPage()}

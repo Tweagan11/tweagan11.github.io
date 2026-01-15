@@ -47,68 +47,68 @@ function Projects() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-4xl font-light text-stone-800 dark:text-stone-100 mb-8 tracking-tight">Projects</h2>
-      <div className="w-16 h-0.5 bg-emerald-700 dark:bg-emerald-500 mb-12"></div>
+    <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+      <h2 className="text-3xl md:text-4xl font-light text-stone-900 dark:text-stone-100 mb-6 md:mb-8 tracking-tight">Projects</h2>
+      <div className="w-16 h-0.5 bg-emerald-600 dark:bg-emerald-400 mb-10 md:mb-12"></div>
 
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         {projects.map((project, idx) => (
           <a
             key={idx}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group block bg-stone-50 dark:bg-stone-800 hover:bg-white dark:hover:bg-stone-750 
-                       border border-stone-200 dark:border-stone-700 hover:border-emerald-700 dark:hover:border-emerald-500
+            className={`group block bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-750 
+                       border border-stone-300 dark:border-stone-700 hover:border-emerald-600 dark:hover:border-emerald-500
                        transition-all duration-300 rounded-sm relative overflow-hidden`}
           >
-            <div className={`grid md:grid-cols-2 gap-0 ${idx % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-0 ${idx % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
               {/* Image Container */}
-              <div className={`bg-stone-200 dark:bg-stone-700 overflow-hidden relative ${idx % 2 === 1 ? 'md:order-2' : ''}`}>
+              <div className={`bg-stone-300 dark:bg-stone-700 overflow-hidden relative h-48 md:h-auto ${idx % 2 === 1 ? 'md:order-2' : ''}`}>
                 <img 
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="320"%3E%3Crect fill="%23d6d3d1" width="400" height="320"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="%23787670" text-anchor="middle" dominant-baseline="middle"%3E{project.title}%3C/text%3E%3C/svg%3E';
+                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="320"%3E%3Crect fill="%23d4d4d4" width="400" height="320"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="%23808080" text-anchor="middle" dominant-baseline="middle"%3E{project.title}%3C/text%3E%3C/svg%3E';
                   }}
                 />
                 {/* Fade Overlay */}
-                <div className={`absolute inset-0 ${idx % 2 === 1 ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-transparent via-transparent to-stone-50 dark:to-stone-800 pointer-events-none`}></div>
+                <div className={`absolute inset-0 ${idx % 2 === 1 ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-transparent via-transparent to-stone-100 dark:to-stone-800 pointer-events-none`}></div>
               </div>
 
               {/* Content Container */}
-              <div className={`p-10 flex flex-col justify-between ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
+              <div className={`p-6 md:p-10 flex flex-col justify-between ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
                 <div>
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-3xl font-light text-stone-800 dark:text-stone-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                  <div className="flex justify-between items-start mb-3 md:mb-4 flex-wrap gap-2">
+                    <h3 className="text-xl md:text-3xl font-light text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                       {project.title}
                     </h3>
                     {project.highlight && (
-                      <span className="text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 rounded-full whitespace-nowrap ml-4">
+                      <span className="text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-stone-200 dark:bg-emerald-950/30 px-3 py-1 rounded-full whitespace-nowrap">
                         {project.highlight}
                       </span>
                     )}
                   </div>
                   
-                  <p className="text-sm text-stone-500 dark:text-stone-400 mb-6">{project.date}</p>
+                  <p className="text-xs md:text-sm text-stone-700 dark:text-stone-400 mb-4 md:mb-6">{project.date}</p>
                   
-                  <p className="text-stone-600 dark:text-stone-300 mb-6 leading-relaxed text-sm">
+                  <p className="text-stone-800 dark:text-stone-300 mb-4 md:mb-6 leading-relaxed text-sm">
                     {project.description}
                   </p>
 
                   {/* Outcome Section */}
-                  <div className="mb-6 p-4 bg-emerald-50 dark:bg-emerald-950/20 border-l-4 border-emerald-700 dark:border-emerald-500 rounded-r">
-                    <p className="text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-semibold mb-2">Outcome</p>
-                    <p className="text-sm text-stone-700 dark:text-stone-200">
+                  <div className="mb-4 md:mb-6 p-3 md:p-4 bg-stone-200 dark:bg-emerald-950/20 border-l-4 border-emerald-600 dark:border-emerald-500 rounded-r">
+                    <p className="text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-semibold mb-1 md:mb-2">Outcome</p>
+                    <p className="text-sm text-stone-800 dark:text-stone-300">
                       {project.outcome}
                     </p>
                   </div>
 
                   {/* Challenge Section */}
-                  <div className="mb-6 p-4 bg-stone-100 dark:bg-stone-700/50 border-l-4 border-stone-400 dark:border-stone-500 rounded-r">
-                    <p className="text-xs uppercase tracking-wider text-stone-600 dark:text-stone-400 font-semibold mb-2">Key Challenge</p>
-                    <p className="text-sm text-stone-700 dark:text-stone-200">
+                  <div className="mb-4 md:mb-6 p-3 md:p-4 bg-stone-150 dark:bg-stone-700/50 border-l-4 border-stone-400 dark:border-stone-600 rounded-r">
+                    <p className="text-xs uppercase tracking-wider text-stone-700 dark:text-stone-400 font-semibold mb-1 md:mb-2">Key Challenge</p>
+                    <p className="text-sm text-stone-800 dark:text-stone-300">
                       {project.challenge}
                     </p>
                   </div>
@@ -117,7 +117,7 @@ function Projects() {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="text-xs text-stone-600 dark:text-stone-300 border border-stone-300 dark:border-stone-600 px-3 py-1 rounded-full hover:border-emerald-700 dark:hover:border-emerald-500 transition-colors">
+                    <span key={i} className="text-xs text-stone-700 dark:text-stone-300 border border-stone-400 dark:border-stone-600 px-3 py-1 rounded-full hover:border-emerald-600 dark:hover:border-emerald-500 transition-colors">
                       {t}
                     </span>
                   ))}
