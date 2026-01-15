@@ -1,17 +1,6 @@
 function Projects() {
   const projects = [
     {
-      title: "Esports Match Prediction",
-      description: "Built an end-to-end ML model using GRU neural networks to predict esports match outcomes, improving accuracy from ~50% baseline to ~70%. Created custom dataset with historical matchups and player metrics.",
-      image: "/img/ssbm_pred.png",
-      outcome: "Achieved 70% prediction accuracy on professional esports matchups",
-      challenge: "Engineering a feature extraction pipeline that effectively captured player skill variance and team dynamics from raw tournament data",
-      tech: ["PyTorch", "NumPy", "Neural Networks", "GRU"],
-      link: "https://github.com/Tweagan11/MeleeMatchPredictor",
-      date: "December 2025",
-      highlight: "70% Accuracy"
-    },
-    {
       title: "HackUSU Winner: Drunken Sailors",
       description: "1st Place Winner out of 40+ teams. Architected and implemented core game mechanics including collision detection, physics systems, and score logic in Godot—a language learned during the competition. Designed synchronized rhythm-based input system using custom BPM timing. Successfully led technical integration of independent components across 3-person team under 18-hour overnight constraints. Game features intentionally complex cooperative controls that reward teamwork and communication.",
       image: "/img/drunk_sail_thumbnail.png",
@@ -21,6 +10,17 @@ function Projects() {
       link: "https://github.com/Tweagan11/HackUSU2025-Drunken-Sailors",
       date: "February 2025",
       highlight: "1st Place"
+    },
+    {
+      title: "Esports Match Prediction",
+      description: "Built an end-to-end ML model using GRU neural networks to predict esports match outcomes, improving accuracy from ~50% baseline to ~70%. Created custom dataset with historical matchups and player metrics.",
+      image: "/img/ssbm_pred.png",
+      outcome: "Achieved 70% prediction accuracy on professional esports matchups",
+      challenge: "Engineering a feature extraction pipeline that effectively captured player skill variance and team dynamics from raw tournament data",
+      tech: ["PyTorch", "NumPy", "Neural Networks", "GRU"],
+      link: "https://github.com/Tweagan11/MeleeMatchPredictor",
+      date: "December 2025",
+      highlight: "70% Accuracy"
     },
     {
       title: "Magic the Gathering Tutorial",
@@ -36,11 +36,11 @@ function Projects() {
     {
       title: "Multiplayer Snake Game",
       description: "Designed MVC architecture with client-server communication for multiplayer gameplay. Built C# GUI rendering at 50 FPS, plus web server syncing with SQL database for high scores.",
-      image: "/img/snake-game.png",
+      image: "/img/snake_game.png",
       outcome: "Achieved consistent 50 FPS rendering with real-time multiplayer synchronization and persistent leaderboards",
       challenge: "Optimizing network latency and managing state synchronization between clients without sacrificing frame rate",
       tech: ["C#", "SQL", "Networking", "Unit Testing"],
-      link: "https://github.com/Tweagan11",
+      link: "https://github.com/Tweagan11/Multiplayer-Snake-Game",
       date: "December 2024",
       highlight: "50 FPS"
     }
