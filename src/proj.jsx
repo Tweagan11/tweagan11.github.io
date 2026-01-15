@@ -4,13 +4,13 @@ function Projects() {
       title: "Esports Match Prediction",
       description: "Built an end-to-end ML model using GRU neural networks to predict esports match outcomes, improving accuracy from ~50% baseline to ~70%. Created custom dataset with historical matchups and player metrics.",
       tech: ["PyTorch", "NumPy", "Neural Networks", "GRU"],
-      link: "https://github.com/Tweagan11",
+      link: "https://github.com/Tweagan11/MeleeMatchPredictor",
       date: "December 2025",
       highlight: "70% Accuracy"
     },
     {
       title: "HackUSU Winner: Drunken Sailors",
-      description: "🏆 1st Place out of 40+ teams. Developed and delivered a complete game prototype within 18 hours, learning new tools and technologies under pressure.",
+      description: "1st Place out of 40+ teams. Developed and delivered a complete game prototype within 18 hours, learning new tools and technologies under pressure.",
       tech: ["Game Dev", "Rapid Prototyping", "Team Collaboration"],
       link: "https://github.com/Tweagan11/HackUSU2025-Drunken-Sailors",
       date: "February 2025",
@@ -20,7 +20,7 @@ function Projects() {
       title: "Magic the Gathering Tutorial",
       description: "Led a 6-person Agile development team building a full-stack MTG tutorial application. Architected MVC design with C++ backend and Qt frontend, implementing game logic and bot AI.",
       tech: ["C++", "Qt", "MVC", "Agile", "Jira"],
-      link: "https://github.com/Tweagan11",
+      link: "https://github.com/chammond123/Magic-Tutorial",
       date: "April 2025",
       highlight: "Team Lead"
     },

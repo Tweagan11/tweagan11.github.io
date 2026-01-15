@@ -7,7 +7,7 @@ function Resume() {
           <div className="w-16 h-0.5 bg-emerald-700 dark:bg-emerald-500"></div>
         </div>
         <a 
-          href="mailto:teagan.ms.ut@gmail.com"
+          href="mailto:teagan.ms.ut@gmail.com?subject=Resume%20Inquiry"
           className="text-sm uppercase tracking-wider text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300
                    border border-emerald-700 dark:border-emerald-500 hover:border-emerald-800 dark:hover:border-emerald-400 px-4 py-2 rounded-sm transition-colors"
         >

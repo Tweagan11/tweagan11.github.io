@@ -21,6 +21,56 @@ const projects = [
     }
 ];
 
+const languages = new Map([
+    ['python', {
+        icon: "/assests/python_logo.png",
+        link: "https://www.python.org/",
+        title: "Python"
+    }],
+    ['c#', {
+        icon: "/assets/cs_logo.png",
+        link: "https://dotnet.microsoft.com/en-us/languages/csharp",
+        title: "C#"
+    }],
+    ['c++', {
+        icon: "/assets/cpp_logo.png",
+        link: "https://cplusplus.com/",
+        title: "C++"
+    }],
+    ["pytorch", {
+        icon: "/assets/pytorch.png",
+        link: "https://pytorch.org/",
+        title: "PyTorch"
+    }],
+    ["blazor", {
+        icon: "/assets/pytorch.png",
+        link: "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+        title: "Blazor"
+    }],
+    ["SQL", {
+        icon: "/assets/sql.png",
+        link: "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+        title: "Blazor"
+    }],
+    ["Qt", {
+        icon: "/assets/qt.png",
+        link: "https://www.qt.io/",
+        title: "Qt"
+    }],
+])
+
+
+function handleClick(link) {
+    window.open(link, '_blank');
+}
+
+function listLanguages(givenLanguages) {
+    // element = 
+    // <>
+    //     <div className="element">{language}</div>
+    // </>
+}
+
 function projectCard(project) {
     return (
         <>
