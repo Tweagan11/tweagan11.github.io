@@ -34,7 +34,7 @@ function Resume() {
               </div>
               <p className="text-stone-600 dark:text-stone-300 mb-2">University of Utah, Kahlert School of Computing</p>
               <div className="flex flex-wrap gap-4 text-sm text-stone-600 dark:text-stone-300">
-                <span className="bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 rounded-full">GPA: 3.95</span>
+                <span className="bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 rounded-full">GPA: 3.94</span>
                 <span className="bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 rounded-full">Major GPA: 4.0</span>
                 <span className="bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 rounded-full">Dean's List: 3 Semesters</span>
               </div>
@@ -48,7 +48,7 @@ function Resume() {
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="text-stone-700 dark:text-stone-200 font-medium mb-2">Languages</h4>
-              <p className="text-stone-600 dark:text-stone-300">Python, C++, C#, Java, JavaScript, SQL, Assembly</p>
+              <p className="text-stone-600 dark:text-stone-300">Python, C++, C#, JavaScript, SQL, Assembly</p>
             </div>
             <div>
               <h4 className="text-stone-700 dark:text-stone-200 font-medium mb-2">ML / Data</h4>
